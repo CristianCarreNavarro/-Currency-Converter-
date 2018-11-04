@@ -60,15 +60,28 @@ class ViewController: UIViewController {
     @IBAction func btnBefore(_ sender: Any) {
         if(imagenFondo.image == UIImage(named:"espanya")){
             imagenFondo.image = UIImage(named: "mahatan")
+            nombreMoneda.text = "Dolar"
+            precioMoneda.text = "1.14$"
+            bandera.image = UIImage(named:"banderaEEUU")
         }
        else if(imagenFondo.image == UIImage(named:"londres")){
             imagenFondo.image = UIImage(named: "espanya")
+            nombreMoneda.text = "Euro"
+            precioMoneda.text = "166.386 pesetas"
+            bandera.image = UIImage(named:"banderaEspanyola")
+            
         }
         else if(imagenFondo.image == UIImage(named:"chile")){
             imagenFondo.image = UIImage(named: "londres")
+            nombreMoneda.text = "Libra"
+            precioMoneda.text = "0,87£"
+            bandera.image = UIImage(named:"banderaLondinense")
         }
         else if(imagenFondo.image == UIImage(named:"japon")){
             imagenFondo.image = UIImage(named: "chile")
+            nombreMoneda.text = "Peso"
+            precioMoneda.text = "781,85₱"
+            bandera.image = UIImage(named:"banderaChilena")
         }
     }
 }
