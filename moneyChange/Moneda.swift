@@ -32,6 +32,8 @@ public class Moneda{
     }
     func getBandera()->String{
         return bandera
-        
+    }
+    func setCosto(valor : Double){
+        self.costo = valor
     }
 }
