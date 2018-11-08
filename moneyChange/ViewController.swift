@@ -29,7 +29,7 @@ var valor2: Double = 0.0
 var cantidadPedida: Double = 0
 var resultado: Double = 0.0
 
-class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
+class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     
     
     @IBOutlet weak var cantidad: UITextField!
@@ -50,9 +50,26 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         precioMoneda.text = String(estadosUnidos.getCosto())
         bandera.image = UIImage(named:estadosUnidos.getBandera())
         btnConvert.layer.cornerRadius = 10
-   
+        cantidad.delegate = self
+       // pickerView.selectRow(2, inComponent:0, animated:true)
+    
     }
     
+
+  func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        cantidad.resignFirstResponder()
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range:
+        NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = "+1234567890"
+        let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
+        let typedCharcterSet = CharacterSet(charactersIn: string)
+        return allowedCharacterSet.isSuperset(of: typedCharcterSet)
+     
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -66,7 +83,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         return arrayMonedas[row].getNombre()
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: NSInteger, inComponent component: Int) {
         if(component==0){
             valor1 = arrayMonedas[row].getCosto()
             print("seleccion1=",valor1)
@@ -121,6 +138,8 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         }
        
     }
+    
+    
     
     
     

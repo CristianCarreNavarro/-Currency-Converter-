@@ -124,6 +124,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="N5J-vh-1o1"/>
+                                </connections>
                             </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewR-J9-H7X">
                                 <rect key="frame" x="286" y="32" width="51" height="45"/>
@@ -185,6 +188,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Qw-Dj-ehU" id="zhz-P7-swt"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdr-92-CRn">
                                 <rect key="frame" x="128" y="450" width="118" height="49"/>
@@ -196,6 +202,13 @@
                                     <action selector="aplicarNuevoValor:" destination="8Qw-Dj-ehU" eventType="touchUpInside" id="0w9-Hm-8SJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-G0-Ha2">
+                                <rect key="frame" x="8" y="558" width="351" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Wlc-OS-rS1"/>
@@ -203,6 +216,7 @@
                     <connections>
                         <outlet property="apply" destination="zdr-92-CRn" id="gcj-78-lbb"/>
                         <outlet property="back" destination="wy2-gw-obv" id="yTJ-eu-lTt"/>
+                        <outlet property="feedBack" destination="SPO-G0-Ha2" id="roG-tT-RTV"/>
                         <outlet property="nuevoValor" destination="gIb-kU-9vW" id="upy-4f-NPg"/>
                     </connections>
                 </viewController>
