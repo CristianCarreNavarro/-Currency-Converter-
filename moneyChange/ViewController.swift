@@ -11,26 +11,24 @@ import UIKit
 
 
 let estadosUnidos = Moneda(nombre: "Dolar", costo: 1.14, imgFondo: "mahatan", bandera:"banderaEEUU")
-
 let espanya = Moneda(nombre: "Euro", costo: 1, imgFondo: "espanya", bandera:"banderaEspanyola")
-
 let londres = Moneda(nombre: "Libra", costo: 0.87, imgFondo: "londres", bandera:"banderaLondinense")
-
 let chile = Moneda(nombre: "Peso", costo: 781.85, imgFondo: "chile", bandera:"banderaChilena")
-
 let japon = Moneda(nombre: "Yen", costo: 129.03, imgFondo: "japon", bandera:"banderaJapon")
+
 
 let arrayMonedas = [estadosUnidos,espanya,londres,chile,japon]
 
-var contador = 0
 
+var contador = 0
 var valor1: Double = 0.0
 var valor2: Double = 0.0
 var cantidadPedida: Double = 0
 var resultado: Double = 0.0
 
+
+
 class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
-    
     
     @IBOutlet weak var cantidad: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -39,7 +37,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     @IBOutlet weak var nombreMoneda: UILabel!
     @IBOutlet weak var precioMoneda: UILabel!
     @IBOutlet weak var resultadoConversion: UILabel!
-    
     @IBOutlet weak var ajustes: UIButton!
     @IBOutlet weak var btnConvert: UIButton!
     
@@ -51,25 +48,20 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         bandera.image = UIImage(named:estadosUnidos.getBandera())
         btnConvert.layer.cornerRadius = 10
         cantidad.delegate = self
-       // pickerView.selectRow(2, inComponent:0, animated:true)
-    
+  
     }
     
-
-  func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        cantidad.resignFirstResponder()
-        
-    }
-    
+  
+/* Metodo que no permite que se acepten caracteres no especificados en la variable allowedharacters
+ */
     func textField(_ textField: UITextField, shouldChangeCharactersIn range:
         NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = "+1234567890"
+        let allowedCharacters = "1234567890"
         let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
         let typedCharcterSet = CharacterSet(charactersIn: string)
         return allowedCharacterSet.isSuperset(of: typedCharcterSet)
-     
     }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -84,6 +76,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: NSInteger, inComponent component: Int) {
+        
         if(component==0){
             valor1 = arrayMonedas[row].getCosto()
             print("seleccion1=",valor1)
@@ -93,8 +86,16 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
             print("seleccion2=",valor2)        }
     }
     
+    
+    
     @IBAction func btnConvert(_ sender: Any) {
         
+        if valor1.isEqual(to: 0.0){
+            valor1=arrayMonedas[0].getCosto()
+        }
+        if valor2.isEqual(to: 0.0){
+            valor2=arrayMonedas[0].getCosto()
+        }
         if (cantidad.text!.isEmpty){
             print("no hay cantidad!")
         }else if(cantidad.text=="9999"){
@@ -124,6 +125,8 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         }
         
     }
+  
+    
     
     @IBAction func btnBefore(_ sender: Any) {
         contador -= 1

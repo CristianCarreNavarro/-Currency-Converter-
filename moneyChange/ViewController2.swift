@@ -15,21 +15,26 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
     @IBOutlet weak var nuevoValor: UITextField!
     @IBOutlet weak var feedBack: UILabel!
     
+    @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet weak var gifview: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gifview.loadGif(name:"estoesMatrix")
         apply.layer.cornerRadius = 10
         back.layer.cornerRadius = 10
-        
+        picker.layer.cornerRadius = 10
         nuevoValor.delegate = self
+        feedBack.isHidden = true
+
     }
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range:
         NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = "+1234567890"
+        let allowedCharacters = "1234567890"
         let allowedCharacterSet = CharacterSet(charactersIn: allowedCharacters)
         let typedCharcterSet = CharacterSet(charactersIn: string)
         return allowedCharacterSet.isSuperset(of: typedCharcterSet)
@@ -68,6 +73,7 @@ class ViewController2: UIViewController,UIPickerViewDelegate,UIPickerViewDataSou
             if (moneda.getCosto()==valor1){
                
                 moneda.setCosto(valor: Double(nuevoValor.text!)!)
+                feedBack.isHidden = false
            feedBack.text! = "El valor de  \(moneda.getNombre()) a sido modificado"
                 
             

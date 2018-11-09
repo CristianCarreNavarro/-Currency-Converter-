@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4043158821950AD300F9B7CD /* estoesMatrix.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4043158721950AD100F9B7CD /* estoesMatrix.gif */; };
+		4043158A21950E9900F9B7CD /* gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043158921950E9900F9B7CD /* gif.swift */; };
 		40A29F26219273FA002D038D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A29F25219273FA002D038D /* ViewController2.swift */; };
 		40D43C31218F752200208A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D43C30218F752200208A35 /* AppDelegate.swift */; };
 		40D43C33218F752200208A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D43C32218F752200208A35 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4043158721950AD100F9B7CD /* estoesMatrix.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = estoesMatrix.gif; path = ../../estoesMatrix.gif; sourceTree = "<group>"; };
+		4043158921950E9900F9B7CD /* gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gif.swift; sourceTree = "<group>"; };
 		40A29F25219273FA002D038D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		40D43C2D218F752200208A35 /* moneyChange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moneyChange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D43C30218F752200208A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		40D43C2F218F752200208A35 /* moneyChange */ = {
 			isa = PBXGroup;
 			children = (
+				4043158721950AD100F9B7CD /* estoesMatrix.gif */,
 				40D43C30218F752200208A35 /* AppDelegate.swift */,
 				40D43C32218F752200208A35 /* ViewController.swift */,
 				40D43C34218F752200208A35 /* Main.storyboard */,
@@ -109,6 +114,7 @@
 				40D43C39218F752800208A35 /* LaunchScreen.storyboard */,
 				40D43C3C218F752800208A35 /* Info.plist */,
 				40F1BDEC21911A2300DBD336 /* Moneda.swift */,
+				4043158921950E9900F9B7CD /* gif.swift */,
 			);
 			path = moneyChange;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4043158821950AD300F9B7CD /* estoesMatrix.gif in Resources */,
 				40D43C3B218F752800208A35 /* LaunchScreen.storyboard in Resources */,
 				40D43C38218F752800208A35 /* Assets.xcassets in Resources */,
 				40D43C36218F752200208A35 /* Main.storyboard in Resources */,
@@ -264,6 +271,7 @@
 			files = (
 				40D43C33218F752200208A35 /* ViewController.swift in Sources */,
 				40A29F26219273FA002D038D /* ViewController2.swift in Sources */,
+				4043158A21950E9900F9B7CD /* gif.swift in Sources */,
 				40D43C31218F752200208A35 /* AppDelegate.swift in Sources */,
 				40F1BDED21911A2300DBD336 /* Moneda.swift in Sources */,
 			);
