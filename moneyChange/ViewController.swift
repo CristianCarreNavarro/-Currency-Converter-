@@ -40,6 +40,8 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     @IBOutlet weak var ajustes: UIButton!
     @IBOutlet weak var btnConvert: UIButton!
     
+    @IBOutlet weak var mensajeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagenFondo.image = UIImage(named:estadosUnidos.getImg())
@@ -48,7 +50,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         bandera.image = UIImage(named:estadosUnidos.getBandera())
         btnConvert.layer.cornerRadius = 10
         cantidad.delegate = self
-  
+    mensajeLabel.text = ""
     }
     
   
@@ -98,17 +100,35 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         }
         if (cantidad.text!.isEmpty){
             print("no hay cantidad!")
+            
+            mostrarAlerta(title: "ERROR", message: "No has introducido cantidad!")
+            
+            
+            
         }else if(cantidad.text=="9999"){
             ajustes.isHidden = false
         }else{
             cantidadPedida = Double(cantidad.text!)!
-            resultado = ((cantidadPedida * valor2)/valor1)
+            resultado = ((cantidadPedida * valor2)/valor1).rounded()
+            
             print("valor1= ", valor1 ," valor2= ", valor2)
             resultadoConversion.text = String(resultado)
         }
     }
 
-    
+    func mostrarAlerta(title: String, message: String) {
+      
+        let alertaGuia = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: {(action) in
+            
+                self.mensajeLabel.text = ""
+        })
+        
+                alertaGuia.addAction(cancelar)
+        present(alertaGuia, animated: true, completion: nil)
+        
+    }
   
   
     @IBAction func btnNext(_ sender: Any) {

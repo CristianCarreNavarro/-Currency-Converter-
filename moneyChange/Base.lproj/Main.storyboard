@@ -136,6 +136,13 @@
                                     <segue destination="8Qw-Dj-ehU" kind="show" id="bgq-rR-5zv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-Wi-oqQ">
+                                <rect key="frame" x="95" y="274" width="184" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -146,6 +153,7 @@
                         <outlet property="btnConvert" destination="Lkm-se-QtQ" id="STp-3W-a1c"/>
                         <outlet property="cantidad" destination="e08-DO-9VG" id="OyH-Y7-I0T"/>
                         <outlet property="imagenFondo" destination="bQ2-aG-OLL" id="QiF-7D-mfD"/>
+                        <outlet property="mensajeLabel" destination="3ho-Wi-oqQ" id="2Tg-br-m9I"/>
                         <outlet property="nombreMoneda" destination="1ah-yV-ltG" id="amm-xn-vdH"/>
                         <outlet property="pickerView" destination="2WG-ky-EJO" id="5bl-wr-bu0"/>
                         <outlet property="precioMoneda" destination="C0x-d7-FYo" id="EfW-3m-UBJ"/>
